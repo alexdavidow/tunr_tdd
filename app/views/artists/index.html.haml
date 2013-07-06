@@ -1,0 +1,12 @@
+%h1 Artists
+
+=link_to 'New Artist', new_artist_path
+
+%table
+-@artists.each do |artist|
+  %thead
+    %tr
+      %th Artist
+  %tbody
+    %tr
+      %td=artist.name

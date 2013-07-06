@@ -1,0 +1,3 @@
+class AlbumbsController < ApplicationController
+
+end

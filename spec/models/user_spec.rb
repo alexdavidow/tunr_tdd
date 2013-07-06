@@ -18,11 +18,12 @@ describe User do
 
     context 'for existing album' do
       it 'does not add album to collection' do
-        # I don't think this is right
         album = create(:album)
-        if subject.purchase(album)
-          subject.albums.should eq [album]
-        end
+        subject.albums = [album]
+        lambda {
+          subject.purchase(album)
+        }.should change{user.albums.size}.by 0
+        user.albums.should eq [album] 
       end
     end
   end
